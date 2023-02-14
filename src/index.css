@@ -251,6 +251,10 @@ header {
   margin-right: 15px;
 }
 
+.pending {
+  text-align: center;
+}
+
 @media only screen and (max-width: 1129px) {
   header {
     display: flex;
