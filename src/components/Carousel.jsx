@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const defaultImg = ["http://pets-images.dev-apis.com/pets/none.jpg"];
+const defaultImg = ["https://pets-images.dev-apis.com/pets/none.jpg"];
 
 const Carousel = ({ images = defaultImg }) => {
   const [active, setActive] = useState(0);
