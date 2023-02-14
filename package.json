@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,tsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx,tsx}\" --quiet"
+    "format:check": "prettier --check \"src/**/*.{js,jsx,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,tsx}\" --quiet",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "Prashanth",
