@@ -2,10 +2,19 @@ import React, { useState } from "react";
 
 const defaultImg = ["https://pets-images.dev-apis.com/pets/none.jpg"];
 
-const Carousel = ({ images = defaultImg }) => {
+interface CarouselProps {
+  images: string[];
+}
+
+const Carousel = ({ images = defaultImg }: CarouselProps) => {
   const [active, setActive] = useState(0);
-  const handleClick = (e) => {
-    setActive(+e.target.dataset.index);
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    if (!(e.target instanceof HTMLElement)) {
+      return;
+    }
+    if (e.target.dataset.index) {
+      setActive(+e.target.dataset.index);
+    }
   };
 
   return (

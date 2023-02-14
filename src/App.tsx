@@ -3,8 +3,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import Details from "./components/Details";
 import { useState } from "react";
 import AdoptedPetContext from "./Context/AdoptedPetContext";
+import { Pet } from "./components/APIResponsesTypes";
 function App() {
-  const adoptedPet = useState(null);
+  const adoptedPet = useState(null as Pet | null);
   return (
     <div className="App">
       <AdoptedPetContext.Provider value={adoptedPet}>

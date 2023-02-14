@@ -10,9 +10,15 @@ import AdoptedPetContext from "../Context/AdoptedPetContext";
 const Details = () => {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
-  // eslint-disable-next-line no-unused-vars
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setAdoptedPet] = useContext(AdoptedPetContext);
+
   const { id } = useParams();
+  if (!id) {
+    throw new Error("No Id found");
+  }
+
   const results = useQuery(["details", id], fetchPet);
 
   if (results.isLoading) {
@@ -23,7 +29,11 @@ const Details = () => {
     );
   }
 
-  const pet = results.data.pets[0];
+  const pet = results?.data?.pets[0];
+
+  if (!pet) {
+    throw new Error("No Pet Found");
+  }
 
   return (
     <div className="details">
